@@ -1,0 +1,93 @@
+$--14px: calc(14rem / 16);
+$--16px: calc(16rem / 16);
+$--17px: calc(17rem / 16);
+$--18px: calc(18rem / 16);
+$--19px: calc(19rem / 16);
+$--28px: calc(28rem / 16);
+$--32px: calc(32rem / 16);
+$--34px: calc(34rem / 16);
+$--32px: calc(32rem / 16);
+$--37px: calc(37rem / 16);
+$--56px: calc(56rem / 16);
+$--64px: calc(64rem / 16);
+$--100px: calc(100rem / 16);
+$--115px: calc(115rem / 16);
+$--150px: calc(150rem / 16);
+$--172px: calc(172rem / 16);
+
+$bellefair-font: var(--bellefair-font);
+$barlow-font: var(--barlow-font);
+$barlow-condensed-font: var(--barlow-condensed-font);
+
+@mixin heading-1 {
+  font-size: $--150px;
+  line-height: $--172px;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-family: $bellefair-font;
+}
+
+@mixin heading-2 {
+  font-size: $--100px;
+  line-height: $--115px;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-family: $bellefair-font;
+}
+
+@mixin heading-3 {
+  font-size: $--56px;
+  line-height: $--64px;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-family: $bellefair-font;
+}
+
+@mixin heading-4 {
+  font-size: $--32px;
+  line-height: $--37px;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-family: $bellefair-font;
+}
+
+@mixin heading-5 {
+  font-size: $--28px;
+  line-height: $--34px;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-family: $barlow-condensed-font;
+}
+
+@mixin subheading-1 {
+  font-size: $--28px;
+  line-height: $--32px;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-family: $bellefair-font;
+}
+
+@mixin subheading-2 {
+  font-size: $--14px;
+  line-height: $--17px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 2.35px;
+  font-family: $barlow-condensed-font;
+}
+
+@mixin subheading-2 {
+  font-size: $--16px;
+  line-height: $--19px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 2.7px;
+  font-family: $barlow-condensed-font;
+}
+
+@mixin body-text {
+  font-size: $--18px;
+  font-size: $--32px;
+  font-weight: 400;
+  font-family: $barlow-font;
+}
