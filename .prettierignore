@@ -7,5 +7,3 @@ public
 .prettierignore
 .eslintignore
 yarn.lock
-
-**/*.scss

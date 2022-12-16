@@ -1,0 +1,102 @@
+@use '../../../../styles/theme/breakpoints.scss';
+@use '../../../../styles/theme/colors.scss';
+@use '../../../../styles/theme/typography.scss';
+
+.container {
+  position: relative;
+  z-index: 9;
+
+  display: flex;
+  justify-content: space-between;
+
+  $hamburger-padding: 9px;
+  $navbar-padding: 24px;
+
+  padding: $navbar-padding;
+  padding-right: $navbar-padding - $hamburger-padding;
+
+  @include breakpoints.md {
+    display: none;
+  }
+
+  .hamburgerButton {
+    padding: $hamburger-padding;
+  }
+
+  .closeBackdrop {
+    z-index: 8;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    cursor: default;
+
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.sideBar {
+  $close-padding: 9px;
+
+  padding: (34px - $close-padding) (27px - $close-padding) 34px 32px;
+
+  max-width: 320px;
+  width: 100%;
+
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(40.7742px);
+
+  height: 100vh;
+
+  position: fixed;
+  z-index: 9;
+
+  transition: transform 0.1s ease-in;
+  transform: translateX(100%);
+
+  top: 0;
+  right: 0;
+  bottom: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  &.open {
+    transform: translateX(0);
+  }
+
+  .closeSideBarButton {
+    padding: $close-padding;
+  }
+
+  .linksWrapper {
+    margin-top: 65px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 32px;
+
+    width: 100%;
+
+    .link {
+      display: flex;
+      align-items: center;
+
+      color: colors.$white;
+      text-decoration: none;
+      text-transform: uppercase;
+
+      @include typography.nav-text;
+
+      .linkBold {
+        font-weight: 700;
+        margin-right: 14px;
+      }
+    }
+  }
+}

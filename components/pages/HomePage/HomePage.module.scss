@@ -1,0 +1,95 @@
+@use '../../../styles/theme/typography.scss';
+@use '../../../styles/theme/breakpoints.scss';
+@use '../../../styles/theme/colors.scss';
+
+.wrapper {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 81px;
+
+  padding: 0 24px;
+
+  margin-top: 24px;
+  margin-bottom: 24px;
+
+  @include breakpoints.md {
+    gap: 156px;
+    margin-top: 66px;
+    margin-bottom: 32px;
+  }
+
+  @include breakpoints.xl {
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: flex-end;
+    margin: 131px 165px;
+    margin-top: auto;
+    gap: 10px;
+  }
+
+  .textWrapper {
+    color: colors.$white;
+    text-align: center;
+    @include breakpoints.xl {
+      text-align: start;
+    }
+
+    .intro {
+      @include typography.heading-5;
+    }
+
+    .heading {
+      @include typography.heading-1;
+      margin-top: 16px;
+      @include breakpoints.md {
+        margin-top: 24px;
+      }
+    }
+
+    .description {
+      @include typography.body-text;
+      color: colors.$light;
+
+      margin-top: 16px;
+      @include breakpoints.md {
+        margin-top: 24px;
+      }
+
+      width: 100%;
+
+      max-width: 445px;
+      @include breakpoints.xl {
+        max-width: 450px;
+      }
+    }
+  }
+
+  .button {
+    @include typography.heading-4;
+    background-color: colors.$white;
+    border-radius: 50%;
+    cursor: pointer;
+    aspect-ratio: 1;
+
+    letter-spacing: 1.25px;
+
+    padding: 68px 27px 59px 29px;
+    min-width: 150px;
+
+    @include breakpoints.md {
+      padding: 103px 48px 102px 46px;
+      min-width: 242px;
+      letter-spacing: 2px;
+    }
+
+    @include breakpoints.xl {
+      padding: 119px 64px 118px 62px;
+      min-width: 274px;
+    }
+  }
+}

@@ -1,0 +1,93 @@
+@use '../../../../styles/theme/colors.scss';
+@use '../../../../styles/theme/typography.scss';
+@use '../../../../styles/theme/sizes.scss';
+@use '../../../../styles/theme/breakpoints.scss';
+
+.wrapper {
+  padding: 0 0 40px 39px;
+
+  position: relative;
+  z-index: 1;
+
+  justify-content: space-between;
+  align-items: center;
+  display: none;
+
+  @include breakpoints.md {
+    display: flex;
+  }
+
+  .separator {
+    height: 1px;
+    background: rgba($color: colors.$white, $alpha: 0.25);
+    flex: 1;
+
+    margin-left: 64px;
+    margin-right: -32px;
+
+    position: relative;
+    z-index: 1;
+
+    display: none;
+
+    @include breakpoints.lg {
+      display: block;
+    }
+  }
+
+  .linksWrapper {
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(40.7742px);
+
+    padding-left: 48px;
+    padding-right: 48px;
+
+    display: flex;
+    gap: 37px;
+
+    @include breakpoints.lg {
+      padding-left: 123px;
+      padding-right: 165px;
+      gap: 48px;
+    }
+
+    .link {
+      display: flex;
+      align-items: center;
+
+      color: colors.$white;
+      text-decoration: none;
+      text-transform: uppercase;
+
+      padding: 36px 0 36px 0;
+
+      border-top: 3px solid transparent;
+      border-bottom: 3px solid transparent;
+
+      @include typography.subheading-2;
+
+      @include breakpoints.lg {
+        @include typography.nav-text;
+      }
+
+      &.active {
+        border-bottom-color: colors.$white;
+      }
+
+      &:hover {
+        border-bottom-color: rgba($color: colors.$white, $alpha: 0.5);
+      }
+
+      .linkBold {
+        font-weight: 700;
+        margin-right: 14px;
+
+        display: none;
+
+        @include breakpoints.lg {
+          display: initial;
+        }
+      }
+    }
+  }
+}

@@ -1,2 +1,8 @@
-@use "./css-reset.scss";
-@use "./theme/typography.scss";
+@use './css-reset.scss';
+@use './theme/typography.scss';
+
+body {
+  min-width: 320px;
+  width: auto !important;
+  width: 320px;
+}

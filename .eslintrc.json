@@ -8,6 +8,8 @@
     "import/prefer-default-export": "off",
     "react/function-component-definition": "off",
     "arrow-body-style": "off",
-    "react/jsx-props-no-spreading": "off"
+    "react/jsx-props-no-spreading": "off",
+    "react/jsx-one-expression-per-line": "off",
+    "import/no-cycle": "off"
   }
 }
