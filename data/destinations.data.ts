@@ -1,3 +1,7 @@
+/* eslint-disable @typescript-eslint/no-use-before-define */
+
+import { Paths } from '../components/layout/Navbar/Navbar';
+
 export interface Destination {
   name: string;
   slug: string;
@@ -10,7 +14,23 @@ export interface Destination {
   travel: string;
 }
 
-export const Destinations: Destination[] = [
+export const getAllDestinations = (): Destination[] => {
+  return Destinations;
+};
+
+export const getFirstDestination = (): Destination => {
+  return Destinations[0];
+};
+
+export const getDestinationUrl = (d: Destination): string => {
+  return `${Paths.destination}/${d.slug}`;
+};
+
+export const getDestinationBySlug = (slug: string): Destination | null => {
+  return Destinations.find((d) => d.slug === slug) ?? null;
+};
+
+const Destinations: Destination[] = [
   {
     name: 'Moon',
     slug: 'moon',

@@ -6,7 +6,7 @@ import navbarStyles from './HamburgerNavbar.module.scss';
 import Logo from '../../../../public/assets/shared/logo.svg';
 import Hamburger from '../../../../public/assets/shared/icon-hamburger.svg';
 import Close from '../../../../public/assets/shared/icon-close.svg';
-import { NavbarLink } from '../Navbar';
+import { NavbarLink, Paths } from '../Navbar';
 
 interface IProps {
   links: NavbarLink[];
@@ -17,7 +17,7 @@ export const HamburgerNavbar = ({ links }: IProps) => {
 
   return (
     <nav className={navbarStyles.container}>
-      <Link href="/">
+      <Link href={Paths.home}>
         <Image src={Logo} alt="Go back to home" />
       </Link>
       {!open && (
@@ -57,7 +57,7 @@ export const HamburgerNavbar = ({ links }: IProps) => {
             </button>
             <div className={navbarStyles.linksWrapper}>
               {links.map((link, idx) => (
-                <Link href={link.path} className={navbarStyles.link}>
+                <Link key={link.path} href={link.path} className={navbarStyles.link}>
                   <span className={navbarStyles.linkBold}>0{idx + 1}</span>
                   {link.label}
                 </Link>

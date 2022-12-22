@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { PageWrapper } from '../../layout/PageWrapper/PageWrapper';
 import BackgroundHomeDesktop from '../../../public/assets/home/background-home-desktop.jpg';
 import homePageStyles from './HomePage.module.scss';
+import { Paths } from '../../layout/Navbar/Navbar';
 
 export const HomePage = () => {
   return (
@@ -16,7 +17,7 @@ export const HomePage = () => {
             a truly out of this world experience!
           </p>
         </div>
-        <Link className={homePageStyles.exploreLink} href="/pick-your-destination">
+        <Link className={homePageStyles.exploreLink} href={Paths.destination}>
           Explore
         </Link>
       </div>

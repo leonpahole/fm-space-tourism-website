@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import Logo from '../../../../public/assets/shared/logo.svg';
-import { NavbarLink } from '../Navbar';
+import { NavbarLink, Paths } from '../Navbar';
 import navbarStyles from './RegularNavbar.module.scss';
 
 interface IProps {
@@ -14,13 +14,14 @@ export const RegularNavbar = ({ links }: IProps) => {
 
   return (
     <nav className={navbarStyles.wrapper}>
-      <Link href="/">
+      <Link href={Paths.home}>
         <Image src={Logo} alt="Go back to home" />
       </Link>
       <div className={navbarStyles.separator} />
       <div className={navbarStyles.linksWrapper}>
         {links.map((link, idx) => (
           <Link
+            key={link.path}
             href={link.path}
             className={`${navbarStyles.link} ${
               router.pathname === link.path ? navbarStyles.active : ''

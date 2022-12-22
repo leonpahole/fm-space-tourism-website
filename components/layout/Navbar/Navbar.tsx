@@ -6,22 +6,29 @@ export interface NavbarLink {
   path: string;
 }
 
+export const Paths = {
+  home: '/',
+  destination: '/pick-your-destination',
+  crew: '/crew',
+  technology: '/technology',
+};
+
 const NavbarLinks: NavbarLink[] = [
   {
     label: 'Home',
-    path: '/',
+    path: Paths.home,
   },
   {
     label: 'Destination',
-    path: '/pick-your-destination',
+    path: Paths.destination,
   },
   {
     label: 'Crew',
-    path: '/crew',
+    path: Paths.crew,
   },
   {
     label: 'Technology',
-    path: '/technology',
+    path: Paths.technology,
   },
 ];
 

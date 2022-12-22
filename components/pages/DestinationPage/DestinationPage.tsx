@@ -5,7 +5,7 @@ import { PageWrapper } from '../../layout/PageWrapper/PageWrapper';
 import BackgroundDestinationDesktop from '../../../public/assets/destination/background-destination-desktop.jpg';
 import destinationPageStyles from './DestinationPage.module.scss';
 import { PageCaption } from '../../shared/PageCaption/PageCaption';
-import { Destination } from '../../../data/destinations.data';
+import { Destination, getDestinationUrl } from '../../../data/destinations.data';
 import { Breakpoints } from '../../../utils/breakpoints';
 
 interface IProps {
@@ -36,14 +36,13 @@ export const DestinationPage = ({ destination, allDestinations }: IProps) => {
             <nav className={destinationPageStyles.navigation}>
               <ul className={destinationPageStyles.list}>
                 {allDestinations.map((dest) => (
-                  <li>
+                  <li key={dest.slug}>
                     <Link
-                      key={dest.slug}
                       className={clsx({
                         [destinationPageStyles.link]: true,
                         [destinationPageStyles.active]: dest.slug === destination.slug,
                       })}
-                      href={`/pick-your-destination/${dest.slug}`}
+                      href={getDestinationUrl(dest)}
                     >
                       {dest.name}
                     </Link>
