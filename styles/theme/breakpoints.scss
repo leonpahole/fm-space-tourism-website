@@ -1,7 +1,9 @@
-$screen-sm-min: 480px;
-$screen-md-min: 768px;
-$screen-lg-min: 1024px;
-$screen-xl-min: 1200px;
+@use './sizes.scss';
+
+$screen-sm-min: sizes.px(480);
+$screen-md-min: sizes.px(768);
+$screen-lg-min: sizes.px(1024);
+$screen-xl-min: sizes.px(1200);
 
 @mixin sm {
   @media (min-width: #{$screen-sm-min}) {

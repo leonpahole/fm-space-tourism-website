@@ -1,6 +1,7 @@
 import '../styles/index.scss';
 import type { AppProps } from 'next/app';
 import { barlowCondensedFont, barlowFont, bellefairFont } from '../utils/font-family.utils';
+import { Breakpoints } from '../utils/breakpoints';
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -12,6 +13,11 @@ export default function App({ Component, pageProps }: AppProps) {
             --bellefair-font: ${bellefairFont.style.fontFamily};
             --barlow-condensed-font: ${barlowCondensedFont.style.fontFamily};
             --barlow-font: ${barlowFont.style.fontFamily};
+
+            --breakpoint-sm: ${Breakpoints.sm};
+            --breakpoint-md: ${Breakpoints.md};
+            --breakpoint-lg: ${Breakpoints.lg};
+            --breakpoint-xl: ${Breakpoints.xl};
           }
         `}
       </style>

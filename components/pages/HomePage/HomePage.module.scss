@@ -53,7 +53,7 @@
 
     .description {
       @include typography.body-text;
-      color: colors.$light;
+      color: colors.$light-blue;
 
       margin-top: 16px;
       @include breakpoints.md {
@@ -69,12 +69,15 @@
     }
   }
 
-  .button {
+  .exploreLink {
     @include typography.heading-4;
+    color: colors.$dark-blue;
     background-color: colors.$white;
     border-radius: 50%;
     cursor: pointer;
     aspect-ratio: 1;
+
+    text-decoration: none;
 
     letter-spacing: 1.25px;
 

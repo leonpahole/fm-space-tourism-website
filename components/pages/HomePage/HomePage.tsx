@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { PageWrapper } from '../../layout/PageWrapper/PageWrapper';
 import BackgroundHomeDesktop from '../../../public/assets/home/background-home-desktop.jpg';
 import homePageStyles from './HomePage.module.scss';
@@ -15,9 +16,9 @@ export const HomePage = () => {
             a truly out of this world experience!
           </p>
         </div>
-        <button className={homePageStyles.button} type="button">
+        <Link className={homePageStyles.exploreLink} href="/pick-your-destination">
           Explore
-        </button>
+        </Link>
       </div>
     </PageWrapper>
   );

@@ -13,7 +13,7 @@ const NavbarLinks: NavbarLink[] = [
   },
   {
     label: 'Destination',
-    path: '/destination',
+    path: '/pick-your-destination',
   },
   {
     label: 'Crew',

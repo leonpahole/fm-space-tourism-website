@@ -12,6 +12,7 @@ $barlow-condensed-font: var(--barlow-condensed-font);
   font-weight: 400;
   text-transform: uppercase;
   font-family: $bellefair-font;
+  color: colors.$white;
 
   @include breakpoints.md {
     font-size: sizes.px(150);
@@ -29,20 +30,34 @@ $barlow-condensed-font: var(--barlow-condensed-font);
   font-weight: 400;
   text-transform: uppercase;
   font-family: $bellefair-font;
+  color: colors.$white;
 }
 
 @mixin heading-3 {
-  font-size: sizes.px(56);
-  line-height: sizes.px(64);
   font-weight: 400;
   text-transform: uppercase;
   font-family: $bellefair-font;
+  color: colors.$white;
+
+  font-size: sizes.px(56);
+  line-height: sizes.px(64);
+
+  @include breakpoints.md {
+    font-size: sizes.px(80);
+    line-height: sizes.px(92);
+  }
+
+  @include breakpoints.xl {
+    font-size: sizes.px(105);
+    line-height: sizes.px(115);
+  }
 }
 
 @mixin heading-4 {
   font-weight: 400;
   text-transform: uppercase;
   font-family: $bellefair-font;
+  color: colors.$white;
 
   font-size: sizes.px(20);
   line-height: sizes.px(23);
@@ -57,19 +72,22 @@ $barlow-condensed-font: var(--barlow-condensed-font);
   font-weight: 400;
   text-transform: uppercase;
   font-family: $barlow-condensed-font;
-  color: colors.$light;
+  color: colors.$light-blue;
 
   font-size: sizes.px(16);
   line-height: sizes.px(19);
+  letter-spacing: 2.7px;
 
   @include breakpoints.md {
     font-size: sizes.px(20);
     line-height: sizes.px(24);
+    letter-spacing: 3.375px;
   }
 
   @include breakpoints.xl {
     font-size: sizes.px(28);
     line-height: sizes.px(34);
+    letter-spacing: 4.725px;
   }
 }
 
@@ -79,15 +97,24 @@ $barlow-condensed-font: var(--barlow-condensed-font);
   font-weight: 400;
   text-transform: uppercase;
   font-family: $bellefair-font;
+  color: colors.$white;
 }
 
 @mixin subheading-2 {
-  font-size: sizes.px(14);
-  line-height: sizes.px(17);
   font-weight: 400;
   text-transform: uppercase;
-  letter-spacing: 2.35px;
   font-family: $barlow-condensed-font;
+  color: colors.$white;
+
+  font-size: sizes.px(14);
+  line-height: sizes.px(17);
+  letter-spacing: 2.35px;
+
+  @include breakpoints.md {
+    font-size: sizes.px(16);
+    line-height: sizes.px(19);
+    letter-spacing: 2.7px;
+  }
 }
 
 @mixin nav-text {
@@ -97,6 +124,7 @@ $barlow-condensed-font: var(--barlow-condensed-font);
   text-transform: uppercase;
   letter-spacing: 2.7px;
   font-family: $barlow-condensed-font;
+  color: colors.$white;
 }
 
 @mixin body-text {
@@ -105,6 +133,8 @@ $barlow-condensed-font: var(--barlow-condensed-font);
 
   font-size: sizes.px(15);
   line-height: sizes.px(25);
+
+  color: colors.$white;
 
   @include breakpoints.md {
     font-size: sizes.px(16);

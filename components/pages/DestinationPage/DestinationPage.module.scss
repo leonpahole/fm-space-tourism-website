@@ -1,0 +1,206 @@
+@use '../../../styles/theme/typography.scss';
+@use '../../../styles/theme/breakpoints.scss';
+@use '../../../styles/theme/colors.scss';
+@use '../../../styles/theme/sizes.scss';
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.paddingWrapper {
+  width: 100%;
+  padding: 0 24px 24px 24px;
+
+  @include breakpoints.md {
+    padding: 0 38px 48px 38px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: sizes.px(691);
+  }
+
+  @include breakpoints.xl {
+    margin-top: 36px;
+    max-width: sizes.px(1110);
+  }
+
+  .wrapper {
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 26px;
+    margin-top: 32px;
+
+    @include breakpoints.md {
+      gap: 53px;
+      margin-top: 60px;
+    }
+
+    @include breakpoints.xl {
+      flex-direction: row;
+      gap: 157px;
+      margin-top: 64px;
+      justify-content: center;
+    }
+
+    .imageWrapper {
+      position: relative;
+      flex-shrink: 0;
+
+      width: 170px;
+      height: 170px;
+
+      @include breakpoints.md {
+        width: 300px;
+        height: 300px;
+      }
+
+      @include breakpoints.xl {
+        width: 445px;
+        height: 445px;
+      }
+
+      .image {
+        animation: rotation 10s infinite linear;
+      }
+    }
+
+    .contentWrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      width: 100%;
+      max-width: sizes.px(573);
+
+      @include breakpoints.xl {
+        align-items: flex-start;
+      }
+
+      .navigation {
+        .list {
+          margin-top: 26px;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 26px;
+
+          margin: 0;
+          padding: 0;
+          list-style: none;
+
+          .link {
+            @include typography.subheading-2;
+            text-decoration: none;
+            padding-bottom: 8px;
+
+            border-bottom: 3px solid transparent;
+            display: block;
+
+            &:hover {
+              border-bottom-color: rgba($color: colors.$white, $alpha: 0.5);
+            }
+
+            &.active {
+              border-bottom-color: colors.$white;
+            }
+          }
+        }
+      }
+
+      .title {
+        margin-top: 20px;
+        @include typography.heading-3;
+
+        @include breakpoints.md {
+          margin-top: 32px;
+        }
+
+        @include breakpoints.xl {
+          margin-top: 37px;
+        }
+      }
+
+      .description {
+        margin-top: 1px;
+        text-align: center;
+        width: 100%;
+        @include typography.body-text;
+        color: colors.$light-blue;
+
+        @include breakpoints.md {
+          margin-top: 8px;
+        }
+
+        @include breakpoints.xl {
+          margin-top: 14px;
+          text-align: start;
+        }
+      }
+
+      .separator {
+        background-color: colors.$grey;
+        height: 2px;
+        margin: 32px 0;
+        width: 100%;
+
+        @include breakpoints.md {
+          margin: 49px 0 28px 0;
+        }
+
+        @include breakpoints.xl {
+          margin: 54px 0 28px 0;
+        }
+      }
+
+      .statsWrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+
+        width: 100%;
+
+        text-align: center;
+
+        @include breakpoints.md {
+          flex-direction: row;
+          justify-content: center;
+          gap: 11px;
+        }
+
+        @include breakpoints.xl {
+          text-align: start;
+          justify-content: flex-start;
+          gap: 79px;
+        }
+
+        .stat {
+          @include breakpoints.md {
+            min-width: sizes.px(216);
+          }
+
+          @include breakpoints.xl {
+            min-width: unset;
+          }
+
+          .caption {
+            @include typography.subheading-2;
+            color: colors.$light-blue;
+          }
+
+          .value {
+            @include typography.subheading-1;
+            margin-top: 12px;
+          }
+        }
+      }
+    }
+  }
+}
