@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Space tourism</title>
+        <title>Space Tourism</title>
       </Head>
       <HomePage />
     </>

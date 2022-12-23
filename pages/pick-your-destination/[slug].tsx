@@ -1,14 +1,10 @@
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from 'next';
 import Head from 'next/head';
 import { DestinationPage } from '../../components/pages/DestinationPage/DestinationPage';
-import {
-  Destination,
-  getAllDestinations,
-  getDestinationBySlug,
-} from '../../data/destinations.data';
+import { Destination, destinationApi } from '../../data/destinations.data';
 
 export const getStaticPaths: GetStaticPaths = () => {
-  const destinations = getAllDestinations();
+  const destinations = destinationApi.getAll();
   return {
     paths: destinations.map((d) => ({ params: { slug: d.slug } })),
     fallback: false,
@@ -19,7 +15,7 @@ export const getStaticProps: GetStaticProps<IProps> = async (context: GetStaticP
   let destination: Destination | null = null;
 
   if (context.params) {
-    destination = getDestinationBySlug(context.params.slug as string);
+    destination = destinationApi.getBySlug(context.params.slug as string);
   }
 
   if (!destination) {
@@ -31,7 +27,7 @@ export const getStaticProps: GetStaticProps<IProps> = async (context: GetStaticP
   return {
     props: {
       destination,
-      allDestinations: getAllDestinations(),
+      allDestinations: destinationApi.getAll(),
     },
   };
 };
@@ -45,7 +41,7 @@ export default function PickYourDestinationPage({ destination, allDestinations }
   return (
     <>
       <Head>
-        <title>Pick your destination | Space tourism</title>
+        <title>{destination.name} - Pick Your Destination | Space Tourism</title>
       </Head>
       <DestinationPage destination={destination} allDestinations={allDestinations} />
     </>

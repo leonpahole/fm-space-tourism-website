@@ -1,6 +1,5 @@
-/* eslint-disable @typescript-eslint/no-use-before-define */
-
 import { Paths } from '../components/layout/Navbar/Navbar';
+import { DataApi } from './data-api';
 
 export interface Destination {
   name: string;
@@ -13,22 +12,6 @@ export interface Destination {
   distance: string;
   travel: string;
 }
-
-export const getAllDestinations = (): Destination[] => {
-  return Destinations;
-};
-
-export const getFirstDestination = (): Destination => {
-  return Destinations[0];
-};
-
-export const getDestinationUrl = (d: Destination): string => {
-  return `${Paths.destination}/${d.slug}`;
-};
-
-export const getDestinationBySlug = (slug: string): Destination | null => {
-  return Destinations.find((d) => d.slug === slug) ?? null;
-};
 
 const Destinations: Destination[] = [
   {
@@ -80,3 +63,5 @@ const Destinations: Destination[] = [
     travel: '7 years',
   },
 ];
+
+export const destinationApi = new DataApi(Destinations, Paths.destination);

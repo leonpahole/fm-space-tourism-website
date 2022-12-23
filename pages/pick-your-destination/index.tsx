@@ -1,11 +1,11 @@
 import { GetStaticProps } from 'next';
-import { getDestinationUrl, getFirstDestination } from '../../data/destinations.data';
+import { destinationApi } from '../../data/destinations.data';
 
 export const getStaticProps: GetStaticProps = async () => {
-  const firstDestination = getFirstDestination();
+  const firstDestination = destinationApi.getFirst();
   return {
     redirect: {
-      destination: getDestinationUrl(firstDestination),
+      destination: destinationApi.getUrl(firstDestination),
       permanent: true,
     },
   };
