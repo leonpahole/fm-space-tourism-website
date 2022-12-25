@@ -117,6 +117,49 @@ $barlow-condensed-font: var(--barlow-condensed-font);
   }
 }
 
+@mixin subheading-3 {
+  font-weight: 400;
+  text-transform: uppercase;
+  font-family: $bellefair-font;
+
+  color: colors.$white;
+
+  font-size: sizes.px(16);
+  line-height: sizes.px(18);
+
+  @include breakpoints.md {
+    font-size: sizes.px(24);
+    line-height: sizes.px(28);
+  }
+
+  @include breakpoints.xl {
+    font-size: sizes.px(32);
+    line-height: sizes.px(37);
+  }
+}
+
+@mixin subheading-4 {
+  font-style: normal;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-family: $bellefair-font;
+
+  color: colors.$white;
+
+  font-size: sizes.px(24);
+  line-height: sizes.px(28);
+
+  @include breakpoints.md {
+    font-size: sizes.px(40);
+    line-height: sizes.px(46);
+  }
+
+  @include breakpoints.xl {
+    font-size: sizes.px(56);
+    line-height: sizes.px(64);
+  }
+}
+
 @mixin nav-text {
   font-size: sizes.px(16);
   line-height: sizes.px(19);

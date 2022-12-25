@@ -10,6 +10,7 @@
     "arrow-body-style": "off",
     "react/jsx-props-no-spreading": "off",
     "react/jsx-one-expression-per-line": "off",
-    "import/no-cycle": "off"
+    "import/no-cycle": "off",
+    "react/require-default-props": "off"
   }
 }

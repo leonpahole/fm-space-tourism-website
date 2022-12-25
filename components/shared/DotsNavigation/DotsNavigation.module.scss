@@ -1,0 +1,34 @@
+@use '../../../styles/theme/typography.scss';
+@use '../../../styles/theme/breakpoints.scss';
+@use '../../../styles/theme/colors.scss';
+@use '../../../styles/theme/sizes.scss';
+
+.wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+
+  @include breakpoints.xl {
+    gap: 24px;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+
+    border-radius: 50%;
+
+    background: colors.$white;
+    opacity: 0.17;
+
+    &.active {
+      opacity: 1;
+    }
+
+    @include breakpoints.xl {
+      width: 15px;
+      height: 15px;
+    }
+  }
+}

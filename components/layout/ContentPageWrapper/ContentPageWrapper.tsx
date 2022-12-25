@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import { StaticImageData } from 'next/image';
 import { PageCaption } from '../../shared/PageCaption/PageCaption';
 import { PageWrapper } from '../PageWrapper/PageWrapper';
@@ -8,19 +9,23 @@ interface IProps {
   captionNumber: number;
   backgroundImage: StaticImageData;
   children: React.ReactNode;
+  paddingWrapperClassName?: string;
+  wrapperClassName?: string;
 }
 
 export const ContentPageWrapper = ({
   captionLabel,
   captionNumber,
   backgroundImage,
+  paddingWrapperClassName,
+  wrapperClassName,
   children,
 }: IProps) => {
   return (
     <PageWrapper backgroundImage={backgroundImage}>
-      <div className={contentPageWrapperStyles.paddingWrapper}>
+      <div className={clsx(contentPageWrapperStyles.paddingWrapper, paddingWrapperClassName)}>
         <PageCaption label={captionLabel} number={captionNumber} />
-        <div className={contentPageWrapperStyles.wrapper}>{children}</div>
+        <div className={clsx(contentPageWrapperStyles.wrapper, wrapperClassName)}>{children}</div>
       </div>
     </PageWrapper>
   );

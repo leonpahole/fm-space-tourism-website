@@ -18,7 +18,7 @@ export const HamburgerNavbar = ({ links }: IProps) => {
   return (
     <nav className={navbarStyles.container}>
       <Link href={Paths.home}>
-        <Image src={Logo} alt="Go back to home" />
+        <Image src={Logo} alt="Go back to home" width="40" height="40" />
       </Link>
       {!open && (
         <button

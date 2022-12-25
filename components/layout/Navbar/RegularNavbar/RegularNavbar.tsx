@@ -24,7 +24,7 @@ export const RegularNavbar = ({ links }: IProps) => {
             key={link.path}
             href={link.path}
             className={`${navbarStyles.link} ${
-              router.pathname === link.path ? navbarStyles.active : ''
+              router.asPath === link.path ? navbarStyles.active : ''
             }`}
           >
             <span className={navbarStyles.linkBold}>0{idx + 1}</span>

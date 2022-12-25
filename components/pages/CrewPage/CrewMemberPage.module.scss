@@ -2,3 +2,140 @@
 @use '../../../styles/theme/breakpoints.scss';
 @use '../../../styles/theme/colors.scss';
 @use '../../../styles/theme/sizes.scss';
+
+.paddingWrapper {
+  @include breakpoints.md {
+    padding-bottom: 0;
+  }
+
+  @include breakpoints.xl {
+    max-width: sizes.px(1300);
+  }
+
+  .contentWrapper {
+    margin: 0;
+    width: 100%;
+  }
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 32px;
+
+  height: 100%;
+  width: 100%;
+
+  padding-top: 32px;
+
+  @include breakpoints.md {
+    flex-direction: column-reverse;
+    padding-top: 60px;
+  }
+
+  @include breakpoints.xl {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    gap: 64px;
+  }
+
+  .imageWrapper {
+    position: relative;
+
+    max-width: 100%;
+
+    width: 327px;
+    height: 223px;
+
+    border-bottom: 1px solid colors.$grey;
+
+    @include breakpoints.md {
+      width: 100%;
+      height: 100%;
+      min-height: 200px;
+      max-width: 456px;
+
+      border-bottom: none;
+    }
+
+    @include breakpoints.xl {
+      max-width: 568px;
+    }
+
+    .image {
+      object-fit: contain;
+
+      @include breakpoints.md {
+        width: 100% !important;
+        height: auto !important;
+
+        top: unset !important;
+        max-height: 100%;
+      }
+    }
+  }
+
+  .navigationAndInfoWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+    @include breakpoints.xl {
+      align-self: flex-end;
+    }
+
+    .dotsNavigationWrapper {
+      @include breakpoints.xl {
+        justify-content: flex-start;
+        margin-top: 120px;
+        margin-bottom: 94px;
+      }
+    }
+
+    @include breakpoints.md {
+      gap: 40px;
+      flex-direction: column-reverse;
+    }
+
+    .crewMemberInfoWrapper {
+      text-align: center;
+
+      @include breakpoints.xl {
+        text-align: start;
+      }
+
+      .role {
+        @include typography.subheading-3;
+
+        color: colors.$white;
+        opacity: 0.5;
+      }
+
+      .name {
+        @include typography.subheading-4;
+
+        margin-top: 8px;
+
+        @include breakpoints.xl {
+          margin-top: 15px;
+        }
+      }
+
+      .bio {
+        @include typography.body-text;
+
+        color: colors.$light-blue;
+
+        max-width: sizes.px(458);
+
+        margin-top: 16px;
+
+        @include breakpoints.xl {
+          margin-top: 27px;
+        }
+      }
+    }
+  }
+}
