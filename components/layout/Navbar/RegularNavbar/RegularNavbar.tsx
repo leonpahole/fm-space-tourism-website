@@ -13,7 +13,7 @@ export const RegularNavbar = ({ links }: IProps) => {
   const router = useRouter();
 
   return (
-    <nav className={navbarStyles.wrapper}>
+    <nav aria-label="Main navigation" className={navbarStyles.wrapper}>
       <Link href={Paths.home}>
         <Image src={Logo} alt="Go back to home" />
       </Link>

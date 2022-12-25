@@ -33,7 +33,7 @@ export const DestinationPage = ({ destination, allDestinations }: IProps) => {
         />
       </div>
       <div className={destinationPageStyles.contentWrapper}>
-        <nav className={destinationPageStyles.navigation}>
+        <nav aria-label="Destinations" className={destinationPageStyles.navigation}>
           <ul className={destinationPageStyles.list}>
             {allDestinations.map((dest) => (
               <li key={dest.slug}>

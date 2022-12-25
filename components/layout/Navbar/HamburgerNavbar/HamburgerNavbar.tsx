@@ -16,7 +16,7 @@ export const HamburgerNavbar = ({ links }: IProps) => {
   const [open, setOpen] = useState<boolean>(false);
 
   return (
-    <nav className={navbarStyles.container}>
+    <nav aria-label="Main navigation" className={navbarStyles.container}>
       <Link href={Paths.home}>
         <Image src={Logo} alt="Go back to home" width="40" height="40" />
       </Link>

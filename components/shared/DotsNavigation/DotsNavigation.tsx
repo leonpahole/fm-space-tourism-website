@@ -12,7 +12,7 @@ export const DotsNavigation = ({ links, wrapperClassName }: IProps) => {
   const router = useRouter();
 
   return (
-    <div className={clsx(dotsNavigationStyles.wrapper, wrapperClassName)}>
+    <nav aria-label="Crew members" className={clsx(dotsNavigationStyles.wrapper, wrapperClassName)}>
       {links.map((link) => {
         return (
           <Link
@@ -25,6 +25,6 @@ export const DotsNavigation = ({ links, wrapperClassName }: IProps) => {
           />
         );
       })}
-    </div>
+    </nav>
   );
 };
