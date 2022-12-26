@@ -14,6 +14,8 @@
 }
 
 .imageWrapper {
+  overflow: hidden;
+
   position: relative;
   flex-shrink: 0;
 
@@ -43,8 +45,16 @@
   width: 100%;
   max-width: sizes.px(573);
 
+  margin-top: 26px;
+
+  @include breakpoints.md {
+    margin-top: 53px;
+  }
+
   @include breakpoints.xl {
     align-items: flex-start;
+    margin-top: 0;
+    margin-left: 157px;
   }
 
   .navigation {

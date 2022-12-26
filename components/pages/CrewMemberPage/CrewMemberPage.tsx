@@ -42,6 +42,7 @@ export const CrewMemberPage = ({ crewMember, allCrewMembers }: IProps) => {
               label: `Link to ${cm.name}`,
             }))}
             wrapperClassName={crewMemberPageStyles.dotsNavigationWrapper}
+            ariaLabel="Crew members"
           />
           <div className={crewMemberPageStyles.crewMemberInfoWrapper}>
             <p className={crewMemberPageStyles.role}>{crewMember.role}</p>

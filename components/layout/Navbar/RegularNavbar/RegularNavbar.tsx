@@ -1,6 +1,7 @@
+import clsx from 'clsx';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
+import { useIsPathActive } from '../../../../hooks/useIsPathActive';
 import Logo from '../../../../public/assets/shared/logo.svg';
 import { NavbarLink, Paths } from '../Navbar';
 import navbarStyles from './RegularNavbar.module.scss';
@@ -10,7 +11,7 @@ interface IProps {
 }
 
 export const RegularNavbar = ({ links }: IProps) => {
-  const router = useRouter();
+  const { returnIfPathActive } = useIsPathActive();
 
   return (
     <nav aria-label="Main navigation" className={navbarStyles.wrapper}>
@@ -23,9 +24,7 @@ export const RegularNavbar = ({ links }: IProps) => {
           <Link
             key={link.path}
             href={link.path}
-            className={`${navbarStyles.link} ${
-              router.asPath === link.path ? navbarStyles.active : ''
-            }`}
+            className={clsx(navbarStyles.link, returnIfPathActive(link.path, navbarStyles.active))}
           >
             <span className={navbarStyles.linkBold}>0{idx + 1}</span>
             {link.label}

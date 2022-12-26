@@ -1,0 +1,111 @@
+@use '../../../styles/theme/typography.scss';
+@use '../../../styles/theme/breakpoints.scss';
+@use '../../../styles/theme/colors.scss';
+@use '../../../styles/theme/sizes.scss';
+
+.paddingWrapper {
+  padding: 0;
+  margin: 0;
+
+  @include breakpoints.md {
+    margin-left: 39px;
+  }
+
+  @include breakpoints.xl {
+    padding-left: 165px;
+    max-width: unset;
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  .contentWrapper {
+    @include breakpoints.md {
+      margin-left: -39px;
+    }
+
+    @include breakpoints.xl {
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      margin: 0;
+      margin-top: 26px;
+      align-items: center;
+      min-height: 515px;
+      flex-grow: 0;
+    }
+  }
+}
+
+.imageWrapper {
+  width: 100vw;
+  height: 170px;
+  position: relative;
+
+  @include breakpoints.md {
+    height: 310px;
+  }
+
+  @include breakpoints.xl {
+    max-width: 515px;
+    max-height: 527px;
+    height: 100%;
+    margin-left: 30px;
+  }
+
+  .image {
+    object-fit: cover;
+  }
+}
+
+.textAndNavigationWrapper {
+  padding: 0 24px;
+
+  display: flex;
+  flex-direction: column;
+
+  @include breakpoints.xl {
+    flex-direction: row;
+  }
+
+  .navigationWrapper {
+    margin-top: 34px;
+
+    @include breakpoints.md {
+      margin-top: 58px;
+    }
+
+    @include breakpoints.xl {
+      margin-right: 80px;
+      margin-top: 0;
+    }
+  }
+
+  .textWrapper {
+    margin-top: 26px;
+    text-align: center;
+
+    @include breakpoints.md {
+      margin-top: 44px;
+      max-width: sizes.px(458);
+    }
+
+    @include breakpoints.xl {
+      max-width: sizes.px(470);
+      text-align: start;
+      margin-top: 0;
+    }
+
+    .terminology {
+      @include typography.subheading-2;
+    }
+
+    .name {
+      @include typography.subheading-4;
+      margin-top: 9px;
+    }
+
+    .description {
+      @include typography.body-text;
+      margin-top: 16px;
+    }
+  }
+}

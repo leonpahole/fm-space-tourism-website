@@ -1,6 +1,6 @@
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from 'next';
 import Head from 'next/head';
-import { CrewMemberPage } from '../../components/pages/CrewPage/CrewMemberPage';
+import { CrewMemberPage } from '../../components/pages/CrewMemberPage/CrewMemberPage';
 import { CrewMember, crewMemberApi } from '../../data/crew.data';
 
 export const getStaticPaths: GetStaticPaths = () => {

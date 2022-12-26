@@ -1,0 +1,57 @@
+@use '../../../styles/theme/typography.scss';
+@use '../../../styles/theme/breakpoints.scss';
+@use '../../../styles/theme/colors.scss';
+@use '../../../styles/theme/sizes.scss';
+
+.wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+
+  @include breakpoints.xl {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .number {
+    min-width: 40px;
+    min-height: 40px;
+
+    @include breakpoints.md {
+      min-width: 60px;
+      min-height: 60px;
+    }
+
+    @include breakpoints.xl {
+      min-width: 80px;
+      min-height: 80px;
+    }
+
+    padding: 11px 16px;
+    aspect-ratio: 1;
+
+    font-size: sizes.px(16);
+    line-height: sizes.px(18);
+
+    border-radius: 50%;
+
+    border: 1px solid rgba($color: colors.$white, $alpha: 0.25);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: colors.$white;
+
+    text-decoration: none;
+
+    &.active {
+      border-color: colors.$white;
+      background: colors.$white;
+
+      color: colors.$dark-blue;
+    }
+  }
+}
