@@ -19,16 +19,6 @@
     min-width: 40px;
     min-height: 40px;
 
-    @include breakpoints.md {
-      min-width: 60px;
-      min-height: 60px;
-    }
-
-    @include breakpoints.xl {
-      min-width: 80px;
-      min-height: 80px;
-    }
-
     padding: 11px 16px;
     aspect-ratio: 1;
 
@@ -47,11 +37,31 @@
 
     text-decoration: none;
 
+    @include breakpoints.md {
+      min-width: 60px;
+      min-height: 60px;
+
+      font-size: sizes.px(24);
+      line-height: sizes.px(28);
+    }
+
+    @include breakpoints.xl {
+      min-width: 80px;
+      min-height: 80px;
+
+      font-size: sizes.px(32);
+      line-height: sizes.px(37);
+    }
+
     &.active {
       border-color: colors.$white;
       background: colors.$white;
 
       color: colors.$dark-blue;
+    }
+
+    &:hover {
+      border-color: colors.$white;
     }
   }
 }
