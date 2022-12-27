@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { CrewMember, crewMemberApi } from '../../../data/crew.data';
 import BackgroundCrewDesktop from '../../../public/assets/crew/background-crew-desktop.jpg';
 import { Breakpoints } from '../../../utils/breakpoints';
+import { FlyInDiv } from '../../animation/FlyInDiv';
 import { ContentPageWrapper } from '../../layout/ContentPageWrapper/ContentPageWrapper';
 import { DotsNavigation } from '../../shared/DotsNavigation/DotsNavigation';
 import crewMemberPageStyles from './CrewMemberPage.module.scss';
@@ -21,7 +22,7 @@ export const CrewMemberPage = ({ crewMember, allCrewMembers }: IProps) => {
       wrapperClassName={crewMemberPageStyles.contentWrapper}
     >
       <div className={crewMemberPageStyles.wrapper}>
-        <div className={crewMemberPageStyles.imageWrapper}>
+        <FlyInDiv from="right" className={crewMemberPageStyles.imageWrapper}>
           <Image
             src={`/${crewMember.images.png}`}
             alt={`Image of ${crewMember.name} crew member`}
@@ -33,9 +34,9 @@ export const CrewMemberPage = ({ crewMember, allCrewMembers }: IProps) => {
             fill
             className={crewMemberPageStyles.image}
           />
-        </div>
+        </FlyInDiv>
 
-        <div className={crewMemberPageStyles.navigationAndInfoWrapper}>
+        <FlyInDiv from="left" className={crewMemberPageStyles.navigationAndInfoWrapper}>
           <DotsNavigation
             links={allCrewMembers.map((cm) => ({
               href: crewMemberApi.getUrl(cm),
@@ -49,7 +50,7 @@ export const CrewMemberPage = ({ crewMember, allCrewMembers }: IProps) => {
             <h1 className={crewMemberPageStyles.name}>{crewMember.name}</h1>
             <p className={crewMemberPageStyles.bio}>{crewMember.bio}</p>
           </article>
-        </div>
+        </FlyInDiv>
       </div>
     </ContentPageWrapper>
   );

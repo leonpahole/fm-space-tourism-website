@@ -1,14 +1,15 @@
 import Link from 'next/link';
-import { PageWrapper } from '../../layout/PageWrapper/PageWrapper';
 import BackgroundHomeDesktop from '../../../public/assets/home/background-home-desktop.jpg';
-import homePageStyles from './HomePage.module.scss';
+import { FlyInDiv } from '../../animation/FlyInDiv';
 import { Paths } from '../../layout/Navbar/Navbar';
+import { PageWrapper } from '../../layout/PageWrapper/PageWrapper';
+import homePageStyles from './HomePage.module.scss';
 
 export const HomePage = () => {
   return (
     <PageWrapper backgroundImage={BackgroundHomeDesktop}>
       <article className={homePageStyles.wrapper}>
-        <div className={homePageStyles.textWrapper}>
+        <FlyInDiv from="left" className={homePageStyles.textWrapper}>
           <p className={homePageStyles.intro}>So, you want to travel to</p>
           <h1 className={homePageStyles.heading}>Space</h1>
           <p className={homePageStyles.description}>
@@ -16,10 +17,10 @@ export const HomePage = () => {
             and not hover kind of on the edge of it. Well sit back, and relax because we’ll give you
             a truly out of this world experience!
           </p>
-        </div>
-        <Link className={homePageStyles.exploreLink} href={Paths.destination}>
-          Explore
-        </Link>
+        </FlyInDiv>
+        <FlyInDiv from="right" className={homePageStyles.exploreLink}>
+          <Link href={Paths.destination}>Explore</Link>
+        </FlyInDiv>
       </article>
     </PageWrapper>
   );

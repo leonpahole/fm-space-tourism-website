@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { Destination, destinationApi } from '../../../data/destinations.data';
 import BackgroundDestinationDesktop from '../../../public/assets/destination/background-destination-desktop.jpg';
 import { Breakpoints } from '../../../utils/breakpoints';
+import { FlyInDiv } from '../../animation/FlyInDiv';
 import { ContentPageWrapper } from '../../layout/ContentPageWrapper/ContentPageWrapper';
 import destinationPageStyles from './DestinationPage.module.scss';
 
@@ -19,7 +20,7 @@ export const DestinationPage = ({ destination, allDestinations }: IProps) => {
       captionLabel="Pick your destination"
       captionNumber={1}
     >
-      <div className={destinationPageStyles.imageWrapper}>
+      <FlyInDiv from="left" className={destinationPageStyles.imageWrapper}>
         <Image
           src={`/${destination.images.png}`}
           alt={`Image of a ${destination.name}`}
@@ -31,8 +32,8 @@ export const DestinationPage = ({ destination, allDestinations }: IProps) => {
           fill
           className={destinationPageStyles.image}
         />
-      </div>
-      <div className={destinationPageStyles.contentWrapper}>
+      </FlyInDiv>
+      <FlyInDiv from="right" className={destinationPageStyles.contentWrapper}>
         <nav aria-label="Destinations" className={destinationPageStyles.navigation}>
           <ul className={destinationPageStyles.list}>
             {allDestinations.map((dest) => (
@@ -63,7 +64,7 @@ export const DestinationPage = ({ destination, allDestinations }: IProps) => {
             <p className={destinationPageStyles.value}>{destination.travel}</p>
           </div>
         </div>
-      </div>
+      </FlyInDiv>
     </ContentPageWrapper>
   );
 };

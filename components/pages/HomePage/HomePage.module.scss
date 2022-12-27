@@ -70,16 +70,17 @@
   }
 
   .exploreLink {
-    @include typography.heading-4;
-    color: colors.$dark-blue;
     background-color: colors.$white;
     border-radius: 50%;
     cursor: pointer;
     aspect-ratio: 1;
 
-    text-decoration: none;
-
-    letter-spacing: 1.25px;
+    a {
+      text-decoration: none;
+      letter-spacing: 1.25px;
+      @include typography.heading-4;
+      color: colors.$dark-blue;
+    }
 
     padding: 68px 27px 59px 29px;
     min-width: 150px;

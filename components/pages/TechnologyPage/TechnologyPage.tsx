@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { technologiesApi, Technology } from '../../../data/technologies.data';
 import BackgroundTechnologyDesktop from '../../../public/assets/technology/background-technology-desktop.jpg';
+import { FlyInDiv } from '../../animation/FlyInDiv';
 import { ContentPageWrapper } from '../../layout/ContentPageWrapper/ContentPageWrapper';
 import { NumbersNavigation } from '../../shared/NumbersNavigation/NumbersNavigation';
 import technologyPageStyles from './TechnologyPage.module.scss';
@@ -19,7 +20,7 @@ export const TechnologyPage = ({ technology, allTechnologies }: IProps) => {
       paddingWrapperClassName={technologyPageStyles.paddingWrapper}
       wrapperClassName={technologyPageStyles.contentWrapper}
     >
-      <div className={technologyPageStyles.imageWrapper}>
+      <FlyInDiv from="right" className={technologyPageStyles.imageWrapper}>
         <Image
           src={`/${technology.images.landscape}`}
           alt=""
@@ -27,9 +28,9 @@ export const TechnologyPage = ({ technology, allTechnologies }: IProps) => {
           sizes="100vw"
           className={technologyPageStyles.image}
         />
-      </div>
+      </FlyInDiv>
 
-      <div className={technologyPageStyles.textAndNavigationWrapper}>
+      <FlyInDiv from="left" className={technologyPageStyles.textAndNavigationWrapper}>
         <NumbersNavigation
           links={allTechnologies.map((t) => ({
             href: technologiesApi.getUrl(t),
@@ -43,7 +44,7 @@ export const TechnologyPage = ({ technology, allTechnologies }: IProps) => {
           <h1 className={technologyPageStyles.name}>{technology.name}</h1>
           <p className={technologyPageStyles.description}>{technology.description}</p>
         </article>
-      </div>
+      </FlyInDiv>
     </ContentPageWrapper>
   );
 };
