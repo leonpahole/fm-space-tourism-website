@@ -13,6 +13,7 @@
   @include breakpoints.xl {
     flex-direction: column;
     gap: 32px;
+    width: auto;
   }
 
   .number {
