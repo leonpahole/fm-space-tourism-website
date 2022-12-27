@@ -1,7 +1,7 @@
-import { GetStaticProps } from 'next';
+import { GetServerSideProps } from 'next';
 import { technologiesApi } from '../../data/technologies.data';
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const firstTechnology = technologiesApi.getFirst();
   return {
     redirect: {

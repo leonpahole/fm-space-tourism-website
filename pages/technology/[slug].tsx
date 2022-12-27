@@ -38,10 +38,12 @@ interface IProps {
 }
 
 export default function SpecificTechnologyPage({ technology, allTechnologies }: IProps) {
+  const title = `${technology.name} - Technologies | Space tourism`;
+
   return (
     <>
       <Head>
-        <title>{technology.name} - Technologies | Space tourism</title>
+        <title>{title}</title>
       </Head>
       <TechnologyPage technology={technology} allTechnologies={allTechnologies} />
     </>

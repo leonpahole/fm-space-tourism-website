@@ -38,10 +38,12 @@ interface IProps {
 }
 
 export default function PickYourDestinationPage({ destination, allDestinations }: IProps) {
+  const title = `${destination.name} - Pick Your Destination | Space Tourism`;
+
   return (
     <>
       <Head>
-        <title>{destination.name} - Pick Your Destination | Space Tourism</title>
+        <title>{title}</title>
       </Head>
       <DestinationPage destination={destination} allDestinations={allDestinations} />
     </>

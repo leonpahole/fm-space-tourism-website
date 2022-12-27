@@ -38,10 +38,12 @@ interface IProps {
 }
 
 export default function CrewPage({ crewMember, allCrewMembers }: IProps) {
+  const title = `${crewMember.name} - Meet Your Crew | Space tourism`;
+
   return (
     <>
       <Head>
-        <title>{crewMember.name} - Meet Your Crew | Space tourism</title>
+        <title>{title}</title>
       </Head>
       <CrewMemberPage crewMember={crewMember} allCrewMembers={allCrewMembers} />
     </>

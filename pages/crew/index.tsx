@@ -1,7 +1,7 @@
-import { GetStaticProps } from 'next';
+import { GetServerSideProps } from 'next';
 import { crewMemberApi } from '../../data/crew.data';
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const firstCrewMember = crewMemberApi.getFirst();
   return {
     redirect: {
