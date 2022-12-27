@@ -38,11 +38,11 @@ export const TechnologyPage = ({ technology, allTechnologies }: IProps) => {
           wrapperClassName={technologyPageStyles.navigationWrapper}
           ariaLabel="Technologies"
         />
-        <div className={technologyPageStyles.textWrapper}>
+        <article className={technologyPageStyles.textWrapper}>
           <p className={technologyPageStyles.terminology}>The terminology...</p>
           <h1 className={technologyPageStyles.name}>{technology.name}</h1>
           <p className={technologyPageStyles.description}>{technology.description}</p>
-        </div>
+        </article>
       </div>
     </ContentPageWrapper>
   );

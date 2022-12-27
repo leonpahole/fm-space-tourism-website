@@ -7,7 +7,7 @@ import { Paths } from '../../layout/Navbar/Navbar';
 export const HomePage = () => {
   return (
     <PageWrapper backgroundImage={BackgroundHomeDesktop}>
-      <div className={homePageStyles.wrapper}>
+      <article className={homePageStyles.wrapper}>
         <div className={homePageStyles.textWrapper}>
           <p className={homePageStyles.intro}>So, you want to travel to</p>
           <h1 className={homePageStyles.heading}>Space</h1>
@@ -20,7 +20,7 @@ export const HomePage = () => {
         <Link className={homePageStyles.exploreLink} href={Paths.destination}>
           Explore
         </Link>
-      </div>
+      </article>
     </PageWrapper>
   );
 };

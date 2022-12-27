@@ -44,11 +44,11 @@ export const CrewMemberPage = ({ crewMember, allCrewMembers }: IProps) => {
             wrapperClassName={crewMemberPageStyles.dotsNavigationWrapper}
             ariaLabel="Crew members"
           />
-          <div className={crewMemberPageStyles.crewMemberInfoWrapper}>
+          <article className={crewMemberPageStyles.crewMemberInfoWrapper}>
             <p className={crewMemberPageStyles.role}>{crewMember.role}</p>
             <h1 className={crewMemberPageStyles.name}>{crewMember.name}</h1>
             <p className={crewMemberPageStyles.bio}>{crewMember.bio}</p>
-          </div>
+          </article>
         </div>
       </div>
     </ContentPageWrapper>
