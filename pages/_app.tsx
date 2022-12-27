@@ -1,5 +1,6 @@
 import '../styles/index.scss';
 import type { AppProps } from 'next/app';
+import { MotionConfig } from 'framer-motion';
 import { barlowCondensedFont, barlowFont, bellefairFont } from '../utils/font-family.utils';
 import { Breakpoints } from '../utils/breakpoints';
 
@@ -21,7 +22,9 @@ export default function App({ Component, pageProps }: AppProps) {
           }
         `}
       </style>
-      <Component {...pageProps} />
+      <MotionConfig reducedMotion="user">
+        <Component {...pageProps} />
+      </MotionConfig>
     </>
   );
 }
