@@ -44,6 +44,7 @@ export default function CrewPage({ crewMember, allCrewMembers }: IProps) {
     <>
       <Head>
         <title>{title}</title>
+        <meta name="description" content={crewMember.bio} />
       </Head>
       <CrewMemberPage crewMember={crewMember} allCrewMembers={allCrewMembers} />
     </>

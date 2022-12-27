@@ -44,6 +44,7 @@ export default function PickYourDestinationPage({ destination, allDestinations }
     <>
       <Head>
         <title>{title}</title>
+        <meta name="description" content={destination.description} />
       </Head>
       <DestinationPage destination={destination} allDestinations={allDestinations} />
     </>

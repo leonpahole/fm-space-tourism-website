@@ -44,6 +44,7 @@ export default function SpecificTechnologyPage({ technology, allTechnologies }: 
     <>
       <Head>
         <title>{title}</title>
+        <meta name="description" content={technology.description} />
       </Head>
       <TechnologyPage technology={technology} allTechnologies={allTechnologies} />
     </>
