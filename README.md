@@ -30,8 +30,8 @@ yarn build
 
 ### Links
 
-- Solution URL: [GitHub](https://github.com/leonpahole/fm-fylo-landing-page)
-- Live Site URL:
+- Solution URL: [GitHub](https://github.com/leonpahole/fm-space-tourism-website)
+- Live Site URL: [https://fm-space-tourism-website.vercel.app/](https://fm-space-tourism-website.vercel.app/)
 
 ## My process
 
