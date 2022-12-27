@@ -45,6 +45,7 @@ In this project, I was focusing on accessibility, performance (using Lighthouse)
 - Separated each destination / crew member / technology into a separate page for the purposes of SEO
 - Used meta description tags
 - Used Framer motion
+- Used Next.js font optimization feature to optimally load fonts
 
 ### Built with
 
