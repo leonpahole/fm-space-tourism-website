@@ -24,7 +24,7 @@ export const CrewMemberPage = ({ crewMember, allCrewMembers }: IProps) => {
       <div className={crewMemberPageStyles.wrapper}>
         <FlyInDiv from="right" className={crewMemberPageStyles.imageWrapper}>
           <Image
-            src={`/${crewMember.images.png}`}
+            src={crewMember.images.png}
             alt={`Image of ${crewMember.name} crew member`}
             sizes={`
               (min-width: ${Breakpoints.xl}) 568px,

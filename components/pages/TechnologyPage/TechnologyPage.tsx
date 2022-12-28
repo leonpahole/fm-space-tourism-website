@@ -22,7 +22,7 @@ export const TechnologyPage = ({ technology, allTechnologies }: IProps) => {
     >
       <FlyInDiv from="right" className={technologyPageStyles.imageWrapper}>
         <Image
-          src={`/${technology.images.landscape}`}
+          src={technology.images.landscape}
           alt=""
           fill
           sizes="100vw"

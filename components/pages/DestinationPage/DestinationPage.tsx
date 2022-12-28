@@ -22,7 +22,7 @@ export const DestinationPage = ({ destination, allDestinations }: IProps) => {
     >
       <FlyInDiv from="left" className={destinationPageStyles.imageWrapper}>
         <Image
-          src={`/${destination.images.png}`}
+          src={destination.images.png}
           alt={`Image of a ${destination.name}`}
           sizes={`
               (min-width: ${Breakpoints.xl}) 445px,
